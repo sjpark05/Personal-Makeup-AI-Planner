@@ -1,0 +1,14 @@
+services:
+  - type: web
+    name: personal-makeup-ai-planner
+    env: node
+    plan: free
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: OPENAI_BASE_URL
+        value: https://factchat-cloud.mindlogic.ai/v1/gateway
+      - key: OPENAI_MODEL
+        value: gpt-5.1-chat-latest
+      - key: OPENAI_API_KEY
+        sync: false
